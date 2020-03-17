@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_month" android:icon="@android:drawable/ic_dialog_dialer"
+          android:title="月" app:showAsAction="always"/>
+    <item android:id="@+id/menu_week" android:icon="@android:drawable/ic_menu_compass"
+          android:title="周" app:showAsAction="always"/>
+    <item android:id="@+id/menu_new" android:icon="@android:drawable/ic_menu_add" android:title="+"
+          app:showAsAction="always"/>
+    <item android:id="@+id/menu_day" android:icon="@android:drawable/ic_menu_today" android:title="日"
+          app:showAsAction="always"/>
+    <item android:id="@+id/menu_note" android:icon="@android:drawable/ic_menu_save" android:title="筆記"
+          app:showAsAction="always"/>
+</menu>
