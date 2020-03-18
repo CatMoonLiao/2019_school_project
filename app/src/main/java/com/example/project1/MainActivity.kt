@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
         //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN)
         val transaction = manager.beginTransaction()
         //預設葉面
+
         transaction.replace(R.id.frameLayout, DayFragment()).commit()
 
         //menu listener
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         menubtn.setSelectedItemId(R.id.menu_day)
 
 
-        val calender = Calendar.getInstance(TimeZone.getDefault(),Locale.TAIWAN)
+      //  val calender = Calendar.getInstance(TimeZone.getDefault(),Locale.TAIWAN)
     }
 
 
