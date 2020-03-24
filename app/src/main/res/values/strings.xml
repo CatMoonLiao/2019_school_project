@@ -3,4 +3,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="color_name">
+        <item>粉色</item>
+        <item>橙色</item>
+        <item>鵝黃色</item>
+        <item>綠色</item>
+        <item>藍色</item>
+        <item>紫色</item>
+    </string-array>
+
 </resources>

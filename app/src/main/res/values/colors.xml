@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#283B39</color>
     <color name="colorPrimaryDark">#1B3D8E</color>
     <color name="colorAccent">#D81B60</color>
+    <array name="item_color">
+        <item name="pink">#DA8B8B</item>
+        <item name="orange">#FFA183</item>
+        <item name="yellow">#FFE396</item>
+        <item name="green">#ADD3AA</item>
+        <item name="blue">#8CCFE0</item>
+        <item name="purple">#AB91D3</item>
+    </array>
 </resources>

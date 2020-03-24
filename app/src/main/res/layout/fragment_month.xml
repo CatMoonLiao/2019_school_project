@@ -11,10 +11,16 @@
             android:id="@+id/calendarView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:foregroundGravity="center"
+            android:selectedWeekBackgroundColor="@color/colorPrimary"
+            android:shownWeekCount="6"
+            android:soundEffectsEnabled="true"
+            android:unfocusedMonthDateColor="#B80000"
             app:layout_constraintBottom_toTopOf="@id/linearlayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
             android:id="@+id/linearlayout"
