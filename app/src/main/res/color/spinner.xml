@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <array android:name="item_color">
+        <item android:name="pink">#DA8B8B</item>
+        <item android:name="orange">#FFA183</item>
+        <item android:name="yellow">#FFE396</item>
+        <item android:name="green">#ADD3AA</item>
+        <item android:name="blue">#8CCFE0</item>
+        <item android:name="purple">#AB91D3</item>
+    </array>
+</selector>

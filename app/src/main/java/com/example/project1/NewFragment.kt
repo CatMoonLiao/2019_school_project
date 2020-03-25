@@ -3,6 +3,7 @@ package com.example.project1
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,12 +24,16 @@ class NewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_new, container, false)
     }
 
     override fun onStart() {
         super.onStart()
-
+        val res: Resources = resources
+        val colorName = res.getStringArray(R.array.color_name)
+        val backgroundColor=res.getIntArray(R.array.item_color)
+        color_spinner.adapter= context?.let { ColorAdapter(it,colorName,backgroundColor) }
         //隱藏輸入鍵盤????
         starttime.hideKeyboard()
         endtime.hideKeyboard()
@@ -148,32 +153,3 @@ class NewFragment : Fragment() {
         imm.hideSoftInputFromWindow(windowToken, 0)
     }
 }
-/*
-private class ColorSpinner :BaseAdapter(){
-    lateinit var colorName:Array<String>
-    lateinit var colorList:Array<Int>
-    lateinit var inflater: LayoutInflater
-
-    fun ColorSpinner(context:Context, colorNames:Array<String>, colorsList:Array<Int>){
-        inflater = LayoutInflater.from(context)
-        colorName = colorNames
-        colorList = colorsList
-    }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getCount(): Int {
-        Log.e("count","${colorList.size}")
-        return colorList.size
-    }
-
-    override fun getItem(position: Int): Any {
-        return null
-    }
-
-    override fun getItemId(position: Int): Long {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-}*/

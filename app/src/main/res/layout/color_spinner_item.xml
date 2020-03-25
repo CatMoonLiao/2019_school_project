@@ -3,11 +3,11 @@
         android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:text="black"
-            android:textColor="#ffffff"
+            android:id="@+id/tv_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="#000000"
             android:gravity="center"
-            android:id="@+id/tv_color" />
+            android:text="black"
+            android:textColor="#ffffff" android:textSize="16sp"/>
 </RelativeLayout>
