@@ -3,6 +3,8 @@
     <color name="colorPrimary">#283B39</color>
     <color name="colorPrimaryDark">#1B3D8E</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="solar_background">#009988</color>
+
     <array name="item_color">
         <item name="pink">#DA8B8B</item>
         <item name="orange">#FFA183</item>

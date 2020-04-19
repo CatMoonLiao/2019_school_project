@@ -7,12 +7,12 @@
 
     <ImageButton
             android:id="@+id/setting_btn"
-            android:layout_width="37dp"
-            android:layout_height="43dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="#00F5F5F5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star" />
+            app:srcCompat="@android:drawable/btn_star"/>
 
     <FrameLayout
             android:id="@+id/frameLayout"
@@ -33,4 +33,12 @@
             app:itemIconTint="@color/selector_menu" app:itemTextColor="@color/selector_menu"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:menu="@menu/menu_down"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginEnd="8dp"
+            android:clickable="true" app:layout_constraintBottom_toTopOf="@id/menu_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_goneMarginEnd="16dp" app:layout_goneMarginRight="16dp"
+            app:srcCompat="@android:drawable/ic_menu_add"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

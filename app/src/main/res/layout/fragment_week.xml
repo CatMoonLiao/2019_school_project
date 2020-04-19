@@ -3,12 +3,77 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
              tools:context=".WeekFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="WEEK" android:textSize="50sp"/>
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/today"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+        />
+        <com.haibin.calendarview.CalendarLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:calendar_content_view_id="@+id/recycler_view"
+                app:calendar_show_mode="only_week_view"
+                app:default_status="shrink"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/today">
+            <com.haibin.calendarview.CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00FFFFFF"
+                    app:calendar_padding="10dp"
+                    app:current_month_lunar_text_color="#949494"
+                    app:current_month_text_color="#202020"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:max_year="2020"
+                    app:min_year="2004"
+                    app:month_view="com.example.project1.CustomMonthView"
+                    app:other_month_lunar_text_color="#BDBDBD"
+                    app:other_month_text_color="#BDBDBD"
+                    app:scheme_text="假"
+                    app:scheme_text_color="#333"
+                    app:scheme_theme_color="#128c4b"
+                    app:selected_lunar_text_color="#fff"
+                    app:selected_text_color="#fff"
+
+                    app:selected_theme_color="#046cea"
+                    app:week_background="#fff"
+                    app:week_bar_height="25dp"
+                    app:week_line_background="#8A8A8A"
+                    app:week_line_margin="30dp"
+                    app:week_start_with="mon"
+                    app:week_text_color="#302F2F"
+                    app:week_text_size="10sp"
+                    app:week_view="com.example.project1.CustomWeekView"
+            >
+
+            </com.haibin.calendarview.CalendarView>
+            <xyz.sangcomz.stickytimelineview.TimeLineRecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+        </com.haibin.calendarview.CalendarLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

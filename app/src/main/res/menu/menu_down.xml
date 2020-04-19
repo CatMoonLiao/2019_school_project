@@ -5,10 +5,6 @@
           android:title="月" app:showAsAction="always"/>
     <item android:id="@+id/menu_week" android:icon="@android:drawable/ic_menu_compass"
           android:title="周" app:showAsAction="always"/>
-    <item android:id="@+id/menu_new" android:icon="@android:drawable/ic_menu_add" android:title="+"
-          app:showAsAction="always"/>
-    <item android:id="@+id/menu_day" android:icon="@android:drawable/ic_menu_today"
-          android:title="日" app:showAsAction="always"/>
     <item android:id="@+id/menu_note" android:icon="@android:drawable/ic_menu_save" android:title="筆記"
           app:showAsAction="always"/>
 </menu>

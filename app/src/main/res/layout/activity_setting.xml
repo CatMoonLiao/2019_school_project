@@ -6,23 +6,46 @@
         android:layout_height="match_parent"
         tools:context=".SettingActivity">
 
+    <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?attr/actionModeCloseDrawable"/>
     <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SETTING"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.483" />
-
-    <ImageButton
-            android:id="@+id/back_btn"
-            android:layout_width="47dp"
-            android:layout_height="39dp"
-            android:background="#00FFFFFF"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="?attr/actionModeCloseDrawable" />
+            android:layout_height="wrap_content" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:layout_weight="1" android:text="設定" android:textAlignment="center"
+            android:textColor="#000000" android:textSize="30sp" android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/back_btn"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView">
+        <Button
+                android:id="@+id/accout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="left"
+                android:text="帳號與備份" android:textSize="20sp"/>
+        <Button
+                android:id="@+id/password_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="left" android:text="隱私設定"
+                android:textSize="20sp"/>
+        <Button
+                android:id="@+id/view_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="left" android:text="版面設定"
+                android:textSize="20sp"/>
+        <Button
+                android:id="@+id/license_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="left" android:text="版權說明"
+                android:textSize="20sp"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

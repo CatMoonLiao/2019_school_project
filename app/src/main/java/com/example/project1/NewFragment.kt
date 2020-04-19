@@ -2,16 +2,12 @@ package com.example.project1
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import android.widget.BaseAdapter
-import android.widget.Spinner
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_new.*
 import java.text.SimpleDateFormat
