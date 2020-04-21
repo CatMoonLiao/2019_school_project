@@ -1,5 +1,6 @@
 package com.example.project1
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -30,6 +31,11 @@ class WeekFragment : Fragment() {
 
         //select day
         calendarView.setOnCalendarSelectListener(selectdaylistener)
+        //initial text
+        today.text=calendarView.curMonth.toString()+"月"+calendarView.curDay.toString()+"日"
+        year.text=calendarView.curYear.toString()
+
+
 
         /*TIME LINE*/
         recycler_view.layoutManager = LinearLayoutManager(this.context,
@@ -60,16 +66,27 @@ class WeekFragment : Fragment() {
         override fun onCalendarOutOfRange(calendar: Calendar?) {
         }
 
+        @SuppressLint("SetTextI18n")
         override fun onCalendarSelect(calendar: Calendar, isClick: Boolean) {
             //選擇日期修改畫面
             val date=LocalDate.of(calendar.year,calendar.month,calendar.day)
-            eventList=getEventList(date)
+
+            //修改上側日期顯示
+            today.text=calendar.month.toString()+"月"+calendar.day+"日"
+            year.text=calendar.year.toString()
             //強制刷新timeline
-            recycler_view.invalidate()
+            val temp=getEventList(date)
+            eventList.clear()
+            eventList.addAll(temp)
+            recycler_view.adapter!!.notifyDataSetChanged()
         }
 
     }
 
+
+
+
+    //timeline
     //Get SectionCallback method
     private fun getSectionCallback(TodayList: List<Event>): RecyclerSectionItemDecoration.SectionCallback {
         return object : RecyclerSectionItemDecoration.SectionCallback {
@@ -85,7 +102,8 @@ class WeekFragment : Fragment() {
             //Implement a method that returns a SectionHeader.
             override fun getSectionHeader(position: Int): SectionInfo? {
 
-                return SectionInfo(eventList[position].hour.toString()+":00")
+                return SectionInfo(eventList[position].hour.toString()+":00"
+                    ,eventList[position].startdatetime.dayOfWeek.toString())
 
             }
         }
