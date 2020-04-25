@@ -22,4 +22,12 @@
         <item>周六</item>
     </string-array>
 
+    <string-array name="insert_item_array">
+        <item>新增筆記</item>
+        <item>新增標籤</item>
+        <item>插入行程</item>
+        <item>插入文字</item>
+    </string-array>
+
+
 </resources>

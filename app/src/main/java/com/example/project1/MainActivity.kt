@@ -19,16 +19,19 @@ class MainActivity : AppCompatActivity() {
         override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when (item.itemId) {
                 R.id.fab->{
+                    fab.visibility=View.INVISIBLE
                     val transaction = manager.beginTransaction()
                     transaction.replace(R.id.frameLayout, newFragment).commit()
                     return false
                 }
                 R.id.menu_month -> {
+                    fab.visibility=View.VISIBLE
                     val transaction = manager.beginTransaction()
                     transaction.replace(R.id.frameLayout, monthFragment).commit()
                     return true
                 }
                 R.id.menu_week -> {
+                    fab.visibility=View.VISIBLE
                     val transaction = manager.beginTransaction()
                     transaction.replace(R.id.frameLayout, weekFragment).commit()
                     return true
@@ -37,13 +40,17 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_note -> {
                     val transaction = manager.beginTransaction()
                     transaction.replace(R.id.frameLayout, noteFragment).commit()
+                    fab.visibility=View.INVISIBLE
                     return true
                 }
             }
             return false
         }
     }
-
+    //返回建
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -66,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
 
         //切換到設定
         val settingbtn=findViewById<ImageButton>(R.id.setting_btn)

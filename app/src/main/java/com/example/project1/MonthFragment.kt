@@ -12,6 +12,8 @@ import java.time.LocalDate
 
 class MonthFragment : Fragment() {
 
+    var chooseDay=LocalDate.now()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,18 +39,16 @@ class MonthFragment : Fragment() {
         @SuppressLint("SetTextI18n")
         override fun onCalendarSelect(calendar: com.haibin.calendarview.Calendar, isClick: Boolean) {
             //選擇日期修改畫面
-            val date= LocalDate.of(calendar.year,calendar.month,calendar.day)
-
+            chooseDay= LocalDate.of(calendar.year,calendar.month,calendar.day)
             //修改上側日期顯示
-            today.text=calendar.month.toString()+"月"+calendar.day+"日"
+            today.text=calendar.month.toString() +"月"+calendar.day +"日"
             todayY.text=calendar.year.toString()
-            //強制刷新timeline
         }
 
     }
     @SuppressLint("SetTextI18n")
     private fun initial(){
-        today.text = calendarView.curMonth.toString()+"月"+calendarView.curDay.toString()+"日"
+        today.text = chooseDay.month.value.toString()+"月"+chooseDay.dayOfMonth+"日"
         todayY.text = calendarView.curYear.toString()
 
     }

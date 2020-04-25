@@ -3,8 +3,8 @@
 
     <item android:id="@+id/menu_month" android:icon="@android:drawable/ic_dialog_dialer"
           android:title="月" app:showAsAction="always"/>
-    <item android:id="@+id/menu_week" android:icon="@android:drawable/ic_menu_compass"
+    <item android:id="@+id/menu_week" android:icon="@drawable/ic_event_black_24dp"
           android:title="周" app:showAsAction="always"/>
-    <item android:id="@+id/menu_note" android:icon="@android:drawable/ic_menu_save" android:title="筆記"
+    <item android:id="@+id/menu_note" android:icon="@drawable/ic_folder_open_black_24dp" android:title="筆記"
           app:showAsAction="always"/>
 </menu>

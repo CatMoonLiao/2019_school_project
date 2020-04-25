@@ -2,11 +2,9 @@ package com.example.project1
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +17,8 @@ import java.time.LocalDate
 
 class WeekFragment : Fragment() {
     lateinit var eventList:MutableList<Event>
+    var chooseDay: LocalDate =LocalDate.now()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -26,13 +26,14 @@ class WeekFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_week, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onStart() {
         super.onStart()
 
         //select day
         calendarView.setOnCalendarSelectListener(selectdaylistener)
         //initial text
-        today.text=calendarView.curMonth.toString()+"月"+calendarView.curDay.toString()+"日"
+        today.text=chooseDay.month.value.toString()+"月"+chooseDay.dayOfMonth+"日"
         year.text=calendarView.curYear.toString()
 
 
@@ -58,7 +59,7 @@ class WeekFragment : Fragment() {
 
     public fun getEventList(date:LocalDate):MutableList<Event>{
         //從資料庫取得event list
-        return DayEvent(LocalDate.now()).eventList
+        return DayEvent(date).eventList
     }
 
 
@@ -74,11 +75,12 @@ class WeekFragment : Fragment() {
             //修改上側日期顯示
             today.text=calendar.month.toString()+"月"+calendar.day+"日"
             year.text=calendar.year.toString()
+
             //強制刷新timeline
-            val temp=getEventList(date)
             eventList.clear()
-            eventList.addAll(temp)
+            eventList.addAll(getEventList(date))
             recycler_view.adapter!!.notifyDataSetChanged()
+
         }
 
     }

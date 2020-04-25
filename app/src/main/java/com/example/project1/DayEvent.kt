@@ -20,7 +20,7 @@ class DayEvent(val date:LocalDate) {
             tempmin=(i*15)%60
             temphr=(i*15)/60
             var tempTime=LocalTime.of(temphr,tempmin)
-            val emptyEvent=Event("test", Color.WHITE, temphr,
+            val emptyEvent=Event("", Color.WHITE, temphr,
                 LocalDateTime.of(date, tempTime), duration,false)
             emptyEvent.name=tempTime.toString()
             eventList.add(emptyEvent)

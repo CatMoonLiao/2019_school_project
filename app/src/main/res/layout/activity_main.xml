@@ -12,7 +12,7 @@
             android:background="#00F5F5F5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star"/>
+            app:srcCompat="@drawable/ic_settings_black_24dp"/>
 
     <FrameLayout
             android:id="@+id/frameLayout"
@@ -29,16 +29,21 @@
             android:background="#D8D8D8"
             android:importantForAccessibility="auto"
             android:visibility="visible"
-            app:itemBackground="@android:color/transparent" app:itemHorizontalTranslationEnabled="true"
-            app:itemIconTint="@color/selector_menu" app:itemTextColor="@color/selector_menu"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:menu="@menu/menu_down"/>
+            app:itemBackground="@android:color/transparent"
+            app:itemHorizontalTranslationEnabled="true"
+            app:itemIconTint="@color/selector_menu"
+            app:itemTextColor="@color/selector_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/menu_down"/>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:layout_marginEnd="8dp"
             android:clickable="true" app:layout_constraintBottom_toTopOf="@id/menu_btn"
             app:layout_constraintEnd_toEndOf="parent"
+
             app:layout_goneMarginEnd="16dp" app:layout_goneMarginRight="16dp"
-            app:srcCompat="@android:drawable/ic_menu_add"/>
+            app:srcCompat="@drawable/ic_add_black_24dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
